@@ -20,11 +20,14 @@ public class GoogleSearchTest  {
         WebElement element = driver.findElement(By.name("q"));
         // Enter something to search for
         element.sendKeys("Cheese!");
+        element.submit();
+        element = driver.findElement(By.xpath("/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[3]/div[1]"));
+        element.click();
 
         // Now submit the form. WebDriver will find the form for us from the element
-        element.submit();
+        //element.submit();
         // Check the title of the page
         System.out.println("Page title is: " + driver.getTitle());
-        driver.quit();
+        //driver.quit();
     }
 }

@@ -27,8 +27,8 @@ public class MultipleWebsiteInTheSameInstance {
         driver.quit();
     }
 
-    @Test
-    public void testWebsite1() {
+    @Test (priority = 1)
+    public void verifyUserNameAndPassWithValidCredentials() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         //Accept cookies
@@ -41,7 +41,7 @@ public class MultipleWebsiteInTheSameInstance {
     }
 
     @Test
-    public void testWebsite2() {
+    public void verifyUserNameAndPassWithInvalidCredentials() {
         // Navigate to website 2
         driver.get("https://www.amazon.com/");
         // Perform some actions on website 2

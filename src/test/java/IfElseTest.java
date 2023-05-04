@@ -1,12 +1,13 @@
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 public class IfElseTest {
     @Test
     public void testPageTitle() {
-        System.out.println("Launching Firefox browser..");
-        WebDriver driver = new FirefoxDriver();
+        System.out.println("Launching Chrome browser..");
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.navigate().to("http://google.com");
 
@@ -15,10 +16,12 @@ public class IfElseTest {
         boolean flag = false;
         if (driver.getTitle().equalsIgnoreCase(expPageTitle)) {
             flag = true;
-            // This method will return True when the page title matches with specified string
+            // This method will return True when the page title
+            // matches with specified string
             System.out.println("Page title matched");
         }
-        Assert.assertTrue(flag, "Page title is not matching with expected");
+        Assert.assertTrue(flag, "Page title is not matching " +
+                "with expected");
         driver.quit();
     }
 }
